@@ -61,6 +61,18 @@ public final class ProtoClientGetRoomHistory {
      * @return The limit.
      */
     int getLimit();
+
+    /**
+     * <code>string documentId = 6;</code>
+     * @return The documentId.
+     */
+    java.lang.String getDocumentId();
+    /**
+     * <code>string documentId = 6;</code>
+     * @return The bytes for documentId.
+     */
+    com.google.protobuf.ByteString
+        getDocumentIdBytes();
   }
   /**
    * Protobuf type {@code proto.ClientGetRoomHistory}
@@ -76,6 +88,7 @@ public final class ProtoClientGetRoomHistory {
     }
     private ClientGetRoomHistory() {
       direction_ = 0;
+      documentId_ = "";
     }
 
     @java.lang.Override
@@ -140,6 +153,12 @@ public final class ProtoClientGetRoomHistory {
             case 40: {
 
               limit_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              documentId_ = s;
               break;
             }
             default: {
@@ -350,6 +369,42 @@ public final class ProtoClientGetRoomHistory {
       return limit_;
     }
 
+    public static final int DOCUMENTID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object documentId_;
+    /**
+     * <code>string documentId = 6;</code>
+     * @return The documentId.
+     */
+    public java.lang.String getDocumentId() {
+      java.lang.Object ref = documentId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        documentId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string documentId = 6;</code>
+     * @return The bytes for documentId.
+     */
+    public com.google.protobuf.ByteString
+        getDocumentIdBytes() {
+      java.lang.Object ref = documentId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        documentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -378,6 +433,9 @@ public final class ProtoClientGetRoomHistory {
       }
       if (limit_ != 0) {
         output.writeUInt32(5, limit_);
+      }
+      if (!getDocumentIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, documentId_);
       }
       unknownFields.writeTo(output);
     }
@@ -408,6 +466,9 @@ public final class ProtoClientGetRoomHistory {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, limit_);
       }
+      if (!getDocumentIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, documentId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -435,6 +496,8 @@ public final class ProtoClientGetRoomHistory {
       if (direction_ != other.direction_) return false;
       if (getLimit()
           != other.getLimit()) return false;
+      if (!getDocumentId()
+          .equals(other.getDocumentId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -460,6 +523,8 @@ public final class ProtoClientGetRoomHistory {
       hash = (53 * hash) + direction_;
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit();
+      hash = (37 * hash) + DOCUMENTID_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -607,6 +672,8 @@ public final class ProtoClientGetRoomHistory {
 
         limit_ = 0;
 
+        documentId_ = "";
+
         return this;
       }
 
@@ -642,6 +709,7 @@ public final class ProtoClientGetRoomHistory {
         result.firstMessageId_ = firstMessageId_;
         result.direction_ = direction_;
         result.limit_ = limit_;
+        result.documentId_ = documentId_;
         onBuilt();
         return result;
       }
@@ -704,6 +772,10 @@ public final class ProtoClientGetRoomHistory {
         }
         if (other.getLimit() != 0) {
           setLimit(other.getLimit());
+        }
+        if (!other.getDocumentId().isEmpty()) {
+          documentId_ = other.documentId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -991,6 +1063,82 @@ public final class ProtoClientGetRoomHistory {
       public Builder clearLimit() {
         
         limit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object documentId_ = "";
+      /**
+       * <code>string documentId = 6;</code>
+       * @return The documentId.
+       */
+      public java.lang.String getDocumentId() {
+        java.lang.Object ref = documentId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          documentId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string documentId = 6;</code>
+       * @return The bytes for documentId.
+       */
+      public com.google.protobuf.ByteString
+          getDocumentIdBytes() {
+        java.lang.Object ref = documentId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          documentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string documentId = 6;</code>
+       * @param value The documentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        documentId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string documentId = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDocumentId() {
+        
+        documentId_ = getDefaultInstance().getDocumentId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string documentId = 6;</code>
+       * @param value The bytes for documentId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDocumentIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        documentId_ = value;
         onChanged();
         return this;
       }
@@ -2056,16 +2204,16 @@ public final class ProtoClientGetRoomHistory {
     java.lang.String[] descriptorData = {
       "\n\032ClientGetRoomHistory.proto\022\005proto\032\rReq" +
       "uest.proto\032\016Response.proto\032\014Global.proto" +
-      "\"\312\001\n\024ClientGetRoomHistory\022\037\n\007request\030\001 \001" +
+      "\"\336\001\n\024ClientGetRoomHistory\022\037\n\007request\030\001 \001" +
       "(\0132\016.proto.Request\022\017\n\007room_id\030\002 \001(\004\022\030\n\020f" +
       "irst_message_id\030\003 \001(\004\0228\n\tdirection\030\004 \001(\016" +
       "2%.proto.ClientGetRoomHistory.Direction\022" +
-      "\r\n\005limit\030\005 \001(\r\"\035\n\tDirection\022\006\n\002UP\020\000\022\010\n\004D" +
-      "OWN\020\001\"f\n\034ClientGetRoomHistoryResponse\022!\n" +
-      "\010response\030\001 \001(\0132\017.proto.Response\022#\n\007mess" +
-      "age\030\002 \003(\0132\022.proto.RoomMessageB2\n\025com.kia" +
-      "niranian.protoB\031ProtoClientGetRoomHistor" +
-      "yb\006proto3"
+      "\r\n\005limit\030\005 \001(\r\022\022\n\ndocumentId\030\006 \001(\t\"\035\n\tDi" +
+      "rection\022\006\n\002UP\020\000\022\010\n\004DOWN\020\001\"f\n\034ClientGetRo" +
+      "omHistoryResponse\022!\n\010response\030\001 \001(\0132\017.pr" +
+      "oto.Response\022#\n\007message\030\002 \003(\0132\022.proto.Ro" +
+      "omMessageB2\n\025com.kianiranian.protoB\031Prot" +
+      "oClientGetRoomHistoryb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2079,7 +2227,7 @@ public final class ProtoClientGetRoomHistory {
     internal_static_proto_ClientGetRoomHistory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_ClientGetRoomHistory_descriptor,
-        new java.lang.String[] { "Request", "RoomId", "FirstMessageId", "Direction", "Limit", });
+        new java.lang.String[] { "Request", "RoomId", "FirstMessageId", "Direction", "Limit", "DocumentId", });
     internal_static_proto_ClientGetRoomHistoryResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_ClientGetRoomHistoryResponse_fieldAccessorTable = new
