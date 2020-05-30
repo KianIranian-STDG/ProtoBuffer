@@ -25,16 +25,16 @@ public final class ProtoUserProfileUpdate {
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
-    com.kianiranian.proto.ProtoRequest.Request getRequest();
+    ProtoRequest.Request getRequest();
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
-    com.kianiranian.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder();
+    ProtoRequest.RequestOrBuilder getRequestOrBuilder();
 
     /**
      * <code>optional string bio = 2;</code>
      */
-    java.lang.String getBio();
+    String getBio();
     /**
      * <code>optional string bio = 2;</code>
      */
@@ -44,7 +44,7 @@ public final class ProtoUserProfileUpdate {
     /**
      * <code>optional string email = 3;</code>
      */
-    java.lang.String getEmail();
+    String getEmail();
     /**
      * <code>optional string email = 3;</code>
      */
@@ -52,19 +52,18 @@ public final class ProtoUserProfileUpdate {
         getEmailBytes();
 
     /**
-     * <code>optional string gender = 4;</code>
+     * <code>optional .proto.Gender gender = 4;</code>
      */
-    java.lang.String getGender();
+    int getGenderValue();
     /**
-     * <code>optional string gender = 4;</code>
+     * <code>optional .proto.Gender gender = 4;</code>
      */
-    com.google.protobuf.ByteString
-        getGenderBytes();
+    com.kianiranian.proto.ProtoGlobal.Gender getGender();
 
     /**
      * <code>optional string nickname = 5;</code>
      */
-    java.lang.String getNickname();
+    String getNickname();
     /**
      * <code>optional string nickname = 5;</code>
      */
@@ -74,7 +73,7 @@ public final class ProtoUserProfileUpdate {
     /**
      * <code>optional string username = 6;</code>
      */
-    java.lang.String getUsername();
+    String getUsername();
     /**
      * <code>optional string username = 6;</code>
      */
@@ -95,12 +94,12 @@ public final class ProtoUserProfileUpdate {
     private UserProfileUpdate() {
       bio_ = "";
       email_ = "";
-      gender_ = "";
+      gender_ = 0;
       nickname_ = "";
       username_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -126,11 +125,11 @@ public final class ProtoUserProfileUpdate {
               break;
             }
             case 10: {
-              com.kianiranian.proto.ProtoRequest.Request.Builder subBuilder = null;
+              ProtoRequest.Request.Builder subBuilder = null;
               if (request_ != null) {
                 subBuilder = request_.toBuilder();
               }
-              request_ = input.readMessage(com.kianiranian.proto.ProtoRequest.Request.parser(), extensionRegistry);
+              request_ = input.readMessage(ProtoRequest.Request.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(request_);
                 request_ = subBuilder.buildPartial();
@@ -139,31 +138,31 @@ public final class ProtoUserProfileUpdate {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               bio_ = s;
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               email_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 32: {
+              int rawValue = input.readEnum();
 
-              gender_ = s;
+              gender_ = rawValue;
               break;
             }
             case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               nickname_ = s;
               break;
             }
             case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               username_ = s;
               break;
@@ -181,18 +180,18 @@ public final class ProtoUserProfileUpdate {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.kianiranian.proto.ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdate_descriptor;
+      return ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdate_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.kianiranian.proto.ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdate_fieldAccessorTable
+      return ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdate_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate.class, com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate.Builder.class);
+              UserProfileUpdate.class, Builder.class);
     }
 
     public static final int REQUEST_FIELD_NUMBER = 1;
-    private com.kianiranian.proto.ProtoRequest.Request request_;
+    private ProtoRequest.Request request_;
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
@@ -202,29 +201,29 @@ public final class ProtoUserProfileUpdate {
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
-    public com.kianiranian.proto.ProtoRequest.Request getRequest() {
-      return request_ == null ? com.kianiranian.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+    public ProtoRequest.Request getRequest() {
+      return request_ == null ? ProtoRequest.Request.getDefaultInstance() : request_;
     }
     /**
      * <code>optional .proto.Request request = 1;</code>
      */
-    public com.kianiranian.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+    public ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
       return getRequest();
     }
 
     public static final int BIO_FIELD_NUMBER = 2;
-    private volatile java.lang.Object bio_;
+    private volatile Object bio_;
     /**
      * <code>optional string bio = 2;</code>
      */
-    public java.lang.String getBio() {
-      java.lang.Object ref = bio_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getBio() {
+      Object ref = bio_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         bio_ = s;
         return s;
       }
@@ -234,11 +233,11 @@ public final class ProtoUserProfileUpdate {
      */
     public com.google.protobuf.ByteString
         getBioBytes() {
-      java.lang.Object ref = bio_;
-      if (ref instanceof java.lang.String) {
+      Object ref = bio_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         bio_ = b;
         return b;
       } else {
@@ -247,18 +246,18 @@ public final class ProtoUserProfileUpdate {
     }
 
     public static final int EMAIL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object email_;
+    private volatile Object email_;
     /**
      * <code>optional string email = 3;</code>
      */
-    public java.lang.String getEmail() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEmail() {
+      Object ref = email_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         email_ = s;
         return s;
       }
@@ -268,11 +267,11 @@ public final class ProtoUserProfileUpdate {
      */
     public com.google.protobuf.ByteString
         getEmailBytes() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
+      Object ref = email_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         email_ = b;
         return b;
       } else {
@@ -281,52 +280,34 @@ public final class ProtoUserProfileUpdate {
     }
 
     public static final int GENDER_FIELD_NUMBER = 4;
-    private volatile java.lang.Object gender_;
+    private int gender_;
     /**
-     * <code>optional string gender = 4;</code>
+     * <code>optional .proto.Gender gender = 4;</code>
      */
-    public java.lang.String getGender() {
-      java.lang.Object ref = gender_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        gender_ = s;
-        return s;
-      }
+    public int getGenderValue() {
+      return gender_;
     }
     /**
-     * <code>optional string gender = 4;</code>
+     * <code>optional .proto.Gender gender = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getGenderBytes() {
-      java.lang.Object ref = gender_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        gender_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.kianiranian.proto.ProtoGlobal.Gender getGender() {
+      com.kianiranian.proto.ProtoGlobal.Gender result = com.kianiranian.proto.ProtoGlobal.Gender.valueOf(gender_);
+      return result == null ? com.kianiranian.proto.ProtoGlobal.Gender.UNRECOGNIZED : result;
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object nickname_;
+    private volatile Object nickname_;
     /**
      * <code>optional string nickname = 5;</code>
      */
-    public java.lang.String getNickname() {
-      java.lang.Object ref = nickname_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getNickname() {
+      Object ref = nickname_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         nickname_ = s;
         return s;
       }
@@ -336,11 +317,11 @@ public final class ProtoUserProfileUpdate {
      */
     public com.google.protobuf.ByteString
         getNicknameBytes() {
-      java.lang.Object ref = nickname_;
-      if (ref instanceof java.lang.String) {
+      Object ref = nickname_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         nickname_ = b;
         return b;
       } else {
@@ -349,18 +330,18 @@ public final class ProtoUserProfileUpdate {
     }
 
     public static final int USERNAME_FIELD_NUMBER = 6;
-    private volatile java.lang.Object username_;
+    private volatile Object username_;
     /**
      * <code>optional string username = 6;</code>
      */
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getUsername() {
+      Object ref = username_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         username_ = s;
         return s;
       }
@@ -370,11 +351,11 @@ public final class ProtoUserProfileUpdate {
      */
     public com.google.protobuf.ByteString
         getUsernameBytes() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
+      Object ref = username_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         username_ = b;
         return b;
       } else {
@@ -403,8 +384,8 @@ public final class ProtoUserProfileUpdate {
       if (!getEmailBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
       }
-      if (!getGenderBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, gender_);
+      if (gender_ != com.kianiranian.proto.ProtoGlobal.Gender.UNKNOWN.getNumber()) {
+        output.writeEnum(4, gender_);
       }
       if (!getNicknameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, nickname_);
@@ -429,8 +410,9 @@ public final class ProtoUserProfileUpdate {
       if (!getEmailBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
       }
-      if (!getGenderBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, gender_);
+      if (gender_ != com.kianiranian.proto.ProtoGlobal.Gender.UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, gender_);
       }
       if (!getNicknameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, nickname_);
@@ -443,15 +425,15 @@ public final class ProtoUserProfileUpdate {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate)) {
+      if (!(obj instanceof UserProfileUpdate)) {
         return super.equals(obj);
       }
-      com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate other = (com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate) obj;
+      UserProfileUpdate other = (UserProfileUpdate) obj;
 
       boolean result = true;
       result = result && (hasRequest() == other.hasRequest());
@@ -463,8 +445,7 @@ public final class ProtoUserProfileUpdate {
           .equals(other.getBio());
       result = result && getEmail()
           .equals(other.getEmail());
-      result = result && getGender()
-          .equals(other.getGender());
+      result = result && gender_ == other.gender_;
       result = result && getNickname()
           .equals(other.getNickname());
       result = result && getUsername()
@@ -472,7 +453,7 @@ public final class ProtoUserProfileUpdate {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -488,7 +469,7 @@ public final class ProtoUserProfileUpdate {
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + GENDER_FIELD_NUMBER;
-      hash = (53 * hash) + getGender().hashCode();
+      hash = (53 * hash) + gender_;
       hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
       hash = (53 * hash) + getNickname().hashCode();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
@@ -498,58 +479,58 @@ public final class ProtoUserProfileUpdate {
       return hash;
     }
 
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parseFrom(
+    public static UserProfileUpdate parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parseFrom(
+    public static UserProfileUpdate parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parseFrom(byte[] data)
+    public static UserProfileUpdate parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parseFrom(
+    public static UserProfileUpdate parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parseFrom(java.io.InputStream input)
+    public static UserProfileUpdate parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parseFrom(
+    public static UserProfileUpdate parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parseDelimitedFrom(java.io.InputStream input)
+    public static UserProfileUpdate parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parseDelimitedFrom(
+    public static UserProfileUpdate parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parseFrom(
+    public static UserProfileUpdate parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parseFrom(
+    public static UserProfileUpdate parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -561,7 +542,7 @@ public final class ProtoUserProfileUpdate {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate prototype) {
+    public static Builder newBuilder(UserProfileUpdate prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -569,9 +550,9 @@ public final class ProtoUserProfileUpdate {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -581,17 +562,17 @@ public final class ProtoUserProfileUpdate {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserProfileUpdate)
-        com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateOrBuilder {
+        UserProfileUpdateOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.kianiranian.proto.ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdate_descriptor;
+        return ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdate_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.kianiranian.proto.ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdate_fieldAccessorTable
+        return ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdate_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate.class, com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate.Builder.class);
+                UserProfileUpdate.class, Builder.class);
       }
 
       // Construct using com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate.newBuilder()
@@ -600,7 +581,7 @@ public final class ProtoUserProfileUpdate {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -621,7 +602,7 @@ public final class ProtoUserProfileUpdate {
 
         email_ = "";
 
-        gender_ = "";
+        gender_ = 0;
 
         nickname_ = "";
 
@@ -632,23 +613,23 @@ public final class ProtoUserProfileUpdate {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.kianiranian.proto.ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdate_descriptor;
+        return ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdate_descriptor;
       }
 
-      public com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate getDefaultInstanceForType() {
-        return com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate.getDefaultInstance();
+      public UserProfileUpdate getDefaultInstanceForType() {
+        return UserProfileUpdate.getDefaultInstance();
       }
 
-      public com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate build() {
-        com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate result = buildPartial();
+      public UserProfileUpdate build() {
+        UserProfileUpdate result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate buildPartial() {
-        com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate result = new com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate(this);
+      public UserProfileUpdate buildPartial() {
+        UserProfileUpdate result = new UserProfileUpdate(this);
         if (requestBuilder_ == null) {
           result.request_ = request_;
         } else {
@@ -690,16 +671,16 @@ public final class ProtoUserProfileUpdate {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate) {
-          return mergeFrom((com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate)other);
+        if (other instanceof UserProfileUpdate) {
+          return mergeFrom((UserProfileUpdate)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate other) {
-        if (other == com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate.getDefaultInstance()) return this;
+      public Builder mergeFrom(UserProfileUpdate other) {
+        if (other == UserProfileUpdate.getDefaultInstance()) return this;
         if (other.hasRequest()) {
           mergeRequest(other.getRequest());
         }
@@ -711,9 +692,8 @@ public final class ProtoUserProfileUpdate {
           email_ = other.email_;
           onChanged();
         }
-        if (!other.getGender().isEmpty()) {
-          gender_ = other.gender_;
-          onChanged();
+        if (other.gender_ != 0) {
+          setGenderValue(other.getGenderValue());
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
@@ -735,11 +715,11 @@ public final class ProtoUserProfileUpdate {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate parsedMessage = null;
+        UserProfileUpdate parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate) e.getUnfinishedMessage();
+          parsedMessage = (UserProfileUpdate) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -749,9 +729,9 @@ public final class ProtoUserProfileUpdate {
         return this;
       }
 
-      private com.kianiranian.proto.ProtoRequest.Request request_ = null;
+      private ProtoRequest.Request request_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.kianiranian.proto.ProtoRequest.Request, com.kianiranian.proto.ProtoRequest.Request.Builder, com.kianiranian.proto.ProtoRequest.RequestOrBuilder> requestBuilder_;
+          ProtoRequest.Request, ProtoRequest.Request.Builder, ProtoRequest.RequestOrBuilder> requestBuilder_;
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
@@ -761,9 +741,9 @@ public final class ProtoUserProfileUpdate {
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public com.kianiranian.proto.ProtoRequest.Request getRequest() {
+      public ProtoRequest.Request getRequest() {
         if (requestBuilder_ == null) {
-          return request_ == null ? com.kianiranian.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+          return request_ == null ? ProtoRequest.Request.getDefaultInstance() : request_;
         } else {
           return requestBuilder_.getMessage();
         }
@@ -771,7 +751,7 @@ public final class ProtoUserProfileUpdate {
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public Builder setRequest(com.kianiranian.proto.ProtoRequest.Request value) {
+      public Builder setRequest(ProtoRequest.Request value) {
         if (requestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -788,7 +768,7 @@ public final class ProtoUserProfileUpdate {
        * <code>optional .proto.Request request = 1;</code>
        */
       public Builder setRequest(
-          com.kianiranian.proto.ProtoRequest.Request.Builder builderForValue) {
+          ProtoRequest.Request.Builder builderForValue) {
         if (requestBuilder_ == null) {
           request_ = builderForValue.build();
           onChanged();
@@ -801,11 +781,11 @@ public final class ProtoUserProfileUpdate {
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public Builder mergeRequest(com.kianiranian.proto.ProtoRequest.Request value) {
+      public Builder mergeRequest(ProtoRequest.Request value) {
         if (requestBuilder_ == null) {
           if (request_ != null) {
             request_ =
-              com.kianiranian.proto.ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
+              ProtoRequest.Request.newBuilder(request_).mergeFrom(value).buildPartial();
           } else {
             request_ = value;
           }
@@ -833,7 +813,7 @@ public final class ProtoUserProfileUpdate {
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public com.kianiranian.proto.ProtoRequest.Request.Builder getRequestBuilder() {
+      public ProtoRequest.Request.Builder getRequestBuilder() {
         
         onChanged();
         return getRequestFieldBuilder().getBuilder();
@@ -841,23 +821,23 @@ public final class ProtoUserProfileUpdate {
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
-      public com.kianiranian.proto.ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
+      public ProtoRequest.RequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
           return requestBuilder_.getMessageOrBuilder();
         } else {
           return request_ == null ?
-              com.kianiranian.proto.ProtoRequest.Request.getDefaultInstance() : request_;
+              ProtoRequest.Request.getDefaultInstance() : request_;
         }
       }
       /**
        * <code>optional .proto.Request request = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.kianiranian.proto.ProtoRequest.Request, com.kianiranian.proto.ProtoRequest.Request.Builder, com.kianiranian.proto.ProtoRequest.RequestOrBuilder> 
+          ProtoRequest.Request, ProtoRequest.Request.Builder, ProtoRequest.RequestOrBuilder>
           getRequestFieldBuilder() {
         if (requestBuilder_ == null) {
           requestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.kianiranian.proto.ProtoRequest.Request, com.kianiranian.proto.ProtoRequest.Request.Builder, com.kianiranian.proto.ProtoRequest.RequestOrBuilder>(
+              ProtoRequest.Request, ProtoRequest.Request.Builder, ProtoRequest.RequestOrBuilder>(
                   getRequest(),
                   getParentForChildren(),
                   isClean());
@@ -866,20 +846,20 @@ public final class ProtoUserProfileUpdate {
         return requestBuilder_;
       }
 
-      private java.lang.Object bio_ = "";
+      private Object bio_ = "";
       /**
        * <code>optional string bio = 2;</code>
        */
-      public java.lang.String getBio() {
-        java.lang.Object ref = bio_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getBio() {
+        Object ref = bio_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           bio_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -887,11 +867,11 @@ public final class ProtoUserProfileUpdate {
        */
       public com.google.protobuf.ByteString
           getBioBytes() {
-        java.lang.Object ref = bio_;
+        Object ref = bio_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           bio_ = b;
           return b;
         } else {
@@ -902,7 +882,7 @@ public final class ProtoUserProfileUpdate {
        * <code>optional string bio = 2;</code>
        */
       public Builder setBio(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -935,20 +915,20 @@ public final class ProtoUserProfileUpdate {
         return this;
       }
 
-      private java.lang.Object email_ = "";
+      private Object email_ = "";
       /**
        * <code>optional string email = 3;</code>
        */
-      public java.lang.String getEmail() {
-        java.lang.Object ref = email_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEmail() {
+        Object ref = email_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           email_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -956,11 +936,11 @@ public final class ProtoUserProfileUpdate {
        */
       public com.google.protobuf.ByteString
           getEmailBytes() {
-        java.lang.Object ref = email_;
+        Object ref = email_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           email_ = b;
           return b;
         } else {
@@ -971,7 +951,7 @@ public final class ProtoUserProfileUpdate {
        * <code>optional string email = 3;</code>
        */
       public Builder setEmail(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1004,89 +984,64 @@ public final class ProtoUserProfileUpdate {
         return this;
       }
 
-      private java.lang.Object gender_ = "";
+      private int gender_ = 0;
       /**
-       * <code>optional string gender = 4;</code>
+       * <code>optional .proto.Gender gender = 4;</code>
        */
-      public java.lang.String getGender() {
-        java.lang.Object ref = gender_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          gender_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getGenderValue() {
+        return gender_;
       }
       /**
-       * <code>optional string gender = 4;</code>
+       * <code>optional .proto.Gender gender = 4;</code>
        */
-      public com.google.protobuf.ByteString
-          getGenderBytes() {
-        java.lang.Object ref = gender_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          gender_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string gender = 4;</code>
-       */
-      public Builder setGender(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setGenderValue(int value) {
         gender_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string gender = 4;</code>
+       * <code>optional .proto.Gender gender = 4;</code>
+       */
+      public com.kianiranian.proto.ProtoGlobal.Gender getGender() {
+        com.kianiranian.proto.ProtoGlobal.Gender result = com.kianiranian.proto.ProtoGlobal.Gender.valueOf(gender_);
+        return result == null ? com.kianiranian.proto.ProtoGlobal.Gender.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.Gender gender = 4;</code>
+       */
+      public Builder setGender(com.kianiranian.proto.ProtoGlobal.Gender value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        gender_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.Gender gender = 4;</code>
        */
       public Builder clearGender() {
         
-        gender_ = getDefaultInstance().getGender();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string gender = 4;</code>
-       */
-      public Builder setGenderBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        gender_ = value;
+        gender_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object nickname_ = "";
+      private Object nickname_ = "";
       /**
        * <code>optional string nickname = 5;</code>
        */
-      public java.lang.String getNickname() {
-        java.lang.Object ref = nickname_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getNickname() {
+        Object ref = nickname_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           nickname_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -1094,11 +1049,11 @@ public final class ProtoUserProfileUpdate {
        */
       public com.google.protobuf.ByteString
           getNicknameBytes() {
-        java.lang.Object ref = nickname_;
+        Object ref = nickname_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           nickname_ = b;
           return b;
         } else {
@@ -1109,7 +1064,7 @@ public final class ProtoUserProfileUpdate {
        * <code>optional string nickname = 5;</code>
        */
       public Builder setNickname(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1142,20 +1097,20 @@ public final class ProtoUserProfileUpdate {
         return this;
       }
 
-      private java.lang.Object username_ = "";
+      private Object username_ = "";
       /**
        * <code>optional string username = 6;</code>
        */
-      public java.lang.String getUsername() {
-        java.lang.Object ref = username_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getUsername() {
+        Object ref = username_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           username_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -1163,11 +1118,11 @@ public final class ProtoUserProfileUpdate {
        */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
-        java.lang.Object ref = username_;
+        Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           username_ = b;
           return b;
         } else {
@@ -1178,7 +1133,7 @@ public final class ProtoUserProfileUpdate {
        * <code>optional string username = 6;</code>
        */
       public Builder setUsername(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1225,12 +1180,12 @@ public final class ProtoUserProfileUpdate {
     }
 
     // @@protoc_insertion_point(class_scope:proto.UserProfileUpdate)
-    private static final com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate DEFAULT_INSTANCE;
+    private static final UserProfileUpdate DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate();
+      DEFAULT_INSTANCE = new UserProfileUpdate();
     }
 
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate getDefaultInstance() {
+    public static UserProfileUpdate getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1248,12 +1203,12 @@ public final class ProtoUserProfileUpdate {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<UserProfileUpdate> getParserForType() {
       return PARSER;
     }
 
-    public com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdate getDefaultInstanceForType() {
+    public UserProfileUpdate getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1270,16 +1225,16 @@ public final class ProtoUserProfileUpdate {
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
-    com.kianiranian.proto.ProtoResponse.Response getResponse();
+    ProtoResponse.Response getResponse();
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
-    com.kianiranian.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
+    ProtoResponse.ResponseOrBuilder getResponseOrBuilder();
 
     /**
      * <code>optional string bio = 2;</code>
      */
-    java.lang.String getBio();
+    String getBio();
     /**
      * <code>optional string bio = 2;</code>
      */
@@ -1289,7 +1244,7 @@ public final class ProtoUserProfileUpdate {
     /**
      * <code>optional string email = 3;</code>
      */
-    java.lang.String getEmail();
+    String getEmail();
     /**
      * <code>optional string email = 3;</code>
      */
@@ -1297,19 +1252,18 @@ public final class ProtoUserProfileUpdate {
         getEmailBytes();
 
     /**
-     * <code>optional string gender = 4;</code>
+     * <code>optional .proto.Gender gender = 4;</code>
      */
-    java.lang.String getGender();
+    int getGenderValue();
     /**
-     * <code>optional string gender = 4;</code>
+     * <code>optional .proto.Gender gender = 4;</code>
      */
-    com.google.protobuf.ByteString
-        getGenderBytes();
+    com.kianiranian.proto.ProtoGlobal.Gender getGender();
 
     /**
      * <code>optional string nickname = 5;</code>
      */
-    java.lang.String getNickname();
+    String getNickname();
     /**
      * <code>optional string nickname = 5;</code>
      */
@@ -1319,7 +1273,7 @@ public final class ProtoUserProfileUpdate {
     /**
      * <code>optional string username = 6;</code>
      */
-    java.lang.String getUsername();
+    String getUsername();
     /**
      * <code>optional string username = 6;</code>
      */
@@ -1340,12 +1294,12 @@ public final class ProtoUserProfileUpdate {
     private UserProfileUpdateResponse() {
       bio_ = "";
       email_ = "";
-      gender_ = "";
+      gender_ = 0;
       nickname_ = "";
       username_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -1371,11 +1325,11 @@ public final class ProtoUserProfileUpdate {
               break;
             }
             case 10: {
-              com.kianiranian.proto.ProtoResponse.Response.Builder subBuilder = null;
+              ProtoResponse.Response.Builder subBuilder = null;
               if (response_ != null) {
                 subBuilder = response_.toBuilder();
               }
-              response_ = input.readMessage(com.kianiranian.proto.ProtoResponse.Response.parser(), extensionRegistry);
+              response_ = input.readMessage(ProtoResponse.Response.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(response_);
                 response_ = subBuilder.buildPartial();
@@ -1384,31 +1338,31 @@ public final class ProtoUserProfileUpdate {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               bio_ = s;
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               email_ = s;
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 32: {
+              int rawValue = input.readEnum();
 
-              gender_ = s;
+              gender_ = rawValue;
               break;
             }
             case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               nickname_ = s;
               break;
             }
             case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               username_ = s;
               break;
@@ -1426,18 +1380,18 @@ public final class ProtoUserProfileUpdate {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.kianiranian.proto.ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdateResponse_descriptor;
+      return ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdateResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.kianiranian.proto.ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdateResponse_fieldAccessorTable
+      return ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdateResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse.class, com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse.Builder.class);
+              UserProfileUpdateResponse.class, Builder.class);
     }
 
     public static final int RESPONSE_FIELD_NUMBER = 1;
-    private com.kianiranian.proto.ProtoResponse.Response response_;
+    private ProtoResponse.Response response_;
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
@@ -1447,29 +1401,29 @@ public final class ProtoUserProfileUpdate {
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
-    public com.kianiranian.proto.ProtoResponse.Response getResponse() {
-      return response_ == null ? com.kianiranian.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+    public ProtoResponse.Response getResponse() {
+      return response_ == null ? ProtoResponse.Response.getDefaultInstance() : response_;
     }
     /**
      * <code>optional .proto.Response response = 1;</code>
      */
-    public com.kianiranian.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+    public ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
       return getResponse();
     }
 
     public static final int BIO_FIELD_NUMBER = 2;
-    private volatile java.lang.Object bio_;
+    private volatile Object bio_;
     /**
      * <code>optional string bio = 2;</code>
      */
-    public java.lang.String getBio() {
-      java.lang.Object ref = bio_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getBio() {
+      Object ref = bio_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         bio_ = s;
         return s;
       }
@@ -1479,11 +1433,11 @@ public final class ProtoUserProfileUpdate {
      */
     public com.google.protobuf.ByteString
         getBioBytes() {
-      java.lang.Object ref = bio_;
-      if (ref instanceof java.lang.String) {
+      Object ref = bio_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         bio_ = b;
         return b;
       } else {
@@ -1492,18 +1446,18 @@ public final class ProtoUserProfileUpdate {
     }
 
     public static final int EMAIL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object email_;
+    private volatile Object email_;
     /**
      * <code>optional string email = 3;</code>
      */
-    public java.lang.String getEmail() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getEmail() {
+      Object ref = email_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         email_ = s;
         return s;
       }
@@ -1513,11 +1467,11 @@ public final class ProtoUserProfileUpdate {
      */
     public com.google.protobuf.ByteString
         getEmailBytes() {
-      java.lang.Object ref = email_;
-      if (ref instanceof java.lang.String) {
+      Object ref = email_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         email_ = b;
         return b;
       } else {
@@ -1526,52 +1480,34 @@ public final class ProtoUserProfileUpdate {
     }
 
     public static final int GENDER_FIELD_NUMBER = 4;
-    private volatile java.lang.Object gender_;
+    private int gender_;
     /**
-     * <code>optional string gender = 4;</code>
+     * <code>optional .proto.Gender gender = 4;</code>
      */
-    public java.lang.String getGender() {
-      java.lang.Object ref = gender_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        gender_ = s;
-        return s;
-      }
+    public int getGenderValue() {
+      return gender_;
     }
     /**
-     * <code>optional string gender = 4;</code>
+     * <code>optional .proto.Gender gender = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getGenderBytes() {
-      java.lang.Object ref = gender_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        gender_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.kianiranian.proto.ProtoGlobal.Gender getGender() {
+      com.kianiranian.proto.ProtoGlobal.Gender result = com.kianiranian.proto.ProtoGlobal.Gender.valueOf(gender_);
+      return result == null ? com.kianiranian.proto.ProtoGlobal.Gender.UNRECOGNIZED : result;
     }
 
     public static final int NICKNAME_FIELD_NUMBER = 5;
-    private volatile java.lang.Object nickname_;
+    private volatile Object nickname_;
     /**
      * <code>optional string nickname = 5;</code>
      */
-    public java.lang.String getNickname() {
-      java.lang.Object ref = nickname_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getNickname() {
+      Object ref = nickname_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         nickname_ = s;
         return s;
       }
@@ -1581,11 +1517,11 @@ public final class ProtoUserProfileUpdate {
      */
     public com.google.protobuf.ByteString
         getNicknameBytes() {
-      java.lang.Object ref = nickname_;
-      if (ref instanceof java.lang.String) {
+      Object ref = nickname_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         nickname_ = b;
         return b;
       } else {
@@ -1594,18 +1530,18 @@ public final class ProtoUserProfileUpdate {
     }
 
     public static final int USERNAME_FIELD_NUMBER = 6;
-    private volatile java.lang.Object username_;
+    private volatile Object username_;
     /**
      * <code>optional string username = 6;</code>
      */
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getUsername() {
+      Object ref = username_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         username_ = s;
         return s;
       }
@@ -1615,11 +1551,11 @@ public final class ProtoUserProfileUpdate {
      */
     public com.google.protobuf.ByteString
         getUsernameBytes() {
-      java.lang.Object ref = username_;
-      if (ref instanceof java.lang.String) {
+      Object ref = username_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         username_ = b;
         return b;
       } else {
@@ -1648,8 +1584,8 @@ public final class ProtoUserProfileUpdate {
       if (!getEmailBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
       }
-      if (!getGenderBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, gender_);
+      if (gender_ != com.kianiranian.proto.ProtoGlobal.Gender.UNKNOWN.getNumber()) {
+        output.writeEnum(4, gender_);
       }
       if (!getNicknameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, nickname_);
@@ -1674,8 +1610,9 @@ public final class ProtoUserProfileUpdate {
       if (!getEmailBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
       }
-      if (!getGenderBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, gender_);
+      if (gender_ != com.kianiranian.proto.ProtoGlobal.Gender.UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, gender_);
       }
       if (!getNicknameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, nickname_);
@@ -1688,15 +1625,15 @@ public final class ProtoUserProfileUpdate {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse)) {
+      if (!(obj instanceof UserProfileUpdateResponse)) {
         return super.equals(obj);
       }
-      com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse other = (com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse) obj;
+      UserProfileUpdateResponse other = (UserProfileUpdateResponse) obj;
 
       boolean result = true;
       result = result && (hasResponse() == other.hasResponse());
@@ -1708,8 +1645,7 @@ public final class ProtoUserProfileUpdate {
           .equals(other.getBio());
       result = result && getEmail()
           .equals(other.getEmail());
-      result = result && getGender()
-          .equals(other.getGender());
+      result = result && gender_ == other.gender_;
       result = result && getNickname()
           .equals(other.getNickname());
       result = result && getUsername()
@@ -1717,7 +1653,7 @@ public final class ProtoUserProfileUpdate {
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -1733,7 +1669,7 @@ public final class ProtoUserProfileUpdate {
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + GENDER_FIELD_NUMBER;
-      hash = (53 * hash) + getGender().hashCode();
+      hash = (53 * hash) + gender_;
       hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
       hash = (53 * hash) + getNickname().hashCode();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
@@ -1743,58 +1679,58 @@ public final class ProtoUserProfileUpdate {
       return hash;
     }
 
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parseFrom(
+    public static UserProfileUpdateResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parseFrom(
+    public static UserProfileUpdateResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parseFrom(byte[] data)
+    public static UserProfileUpdateResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parseFrom(
+    public static UserProfileUpdateResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parseFrom(java.io.InputStream input)
+    public static UserProfileUpdateResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parseFrom(
+    public static UserProfileUpdateResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parseDelimitedFrom(java.io.InputStream input)
+    public static UserProfileUpdateResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parseDelimitedFrom(
+    public static UserProfileUpdateResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parseFrom(
+    public static UserProfileUpdateResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parseFrom(
+    public static UserProfileUpdateResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1806,7 +1742,7 @@ public final class ProtoUserProfileUpdate {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse prototype) {
+    public static Builder newBuilder(UserProfileUpdateResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1814,9 +1750,9 @@ public final class ProtoUserProfileUpdate {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1826,17 +1762,17 @@ public final class ProtoUserProfileUpdate {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:proto.UserProfileUpdateResponse)
-        com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponseOrBuilder {
+        UserProfileUpdateResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.kianiranian.proto.ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdateResponse_descriptor;
+        return ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdateResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.kianiranian.proto.ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdateResponse_fieldAccessorTable
+        return ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdateResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse.class, com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse.Builder.class);
+                UserProfileUpdateResponse.class, Builder.class);
       }
 
       // Construct using com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse.newBuilder()
@@ -1845,7 +1781,7 @@ public final class ProtoUserProfileUpdate {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1866,7 +1802,7 @@ public final class ProtoUserProfileUpdate {
 
         email_ = "";
 
-        gender_ = "";
+        gender_ = 0;
 
         nickname_ = "";
 
@@ -1877,23 +1813,23 @@ public final class ProtoUserProfileUpdate {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.kianiranian.proto.ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdateResponse_descriptor;
+        return ProtoUserProfileUpdate.internal_static_proto_UserProfileUpdateResponse_descriptor;
       }
 
-      public com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse getDefaultInstanceForType() {
-        return com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse.getDefaultInstance();
+      public UserProfileUpdateResponse getDefaultInstanceForType() {
+        return UserProfileUpdateResponse.getDefaultInstance();
       }
 
-      public com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse build() {
-        com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse result = buildPartial();
+      public UserProfileUpdateResponse build() {
+        UserProfileUpdateResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse buildPartial() {
-        com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse result = new com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse(this);
+      public UserProfileUpdateResponse buildPartial() {
+        UserProfileUpdateResponse result = new UserProfileUpdateResponse(this);
         if (responseBuilder_ == null) {
           result.response_ = response_;
         } else {
@@ -1935,16 +1871,16 @@ public final class ProtoUserProfileUpdate {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse) {
-          return mergeFrom((com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse)other);
+        if (other instanceof UserProfileUpdateResponse) {
+          return mergeFrom((UserProfileUpdateResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse other) {
-        if (other == com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(UserProfileUpdateResponse other) {
+        if (other == UserProfileUpdateResponse.getDefaultInstance()) return this;
         if (other.hasResponse()) {
           mergeResponse(other.getResponse());
         }
@@ -1956,9 +1892,8 @@ public final class ProtoUserProfileUpdate {
           email_ = other.email_;
           onChanged();
         }
-        if (!other.getGender().isEmpty()) {
-          gender_ = other.gender_;
-          onChanged();
+        if (other.gender_ != 0) {
+          setGenderValue(other.getGenderValue());
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
@@ -1980,11 +1915,11 @@ public final class ProtoUserProfileUpdate {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse parsedMessage = null;
+        UserProfileUpdateResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse) e.getUnfinishedMessage();
+          parsedMessage = (UserProfileUpdateResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1994,9 +1929,9 @@ public final class ProtoUserProfileUpdate {
         return this;
       }
 
-      private com.kianiranian.proto.ProtoResponse.Response response_ = null;
+      private ProtoResponse.Response response_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.kianiranian.proto.ProtoResponse.Response, com.kianiranian.proto.ProtoResponse.Response.Builder, com.kianiranian.proto.ProtoResponse.ResponseOrBuilder> responseBuilder_;
+          ProtoResponse.Response, ProtoResponse.Response.Builder, ProtoResponse.ResponseOrBuilder> responseBuilder_;
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
@@ -2006,9 +1941,9 @@ public final class ProtoUserProfileUpdate {
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public com.kianiranian.proto.ProtoResponse.Response getResponse() {
+      public ProtoResponse.Response getResponse() {
         if (responseBuilder_ == null) {
-          return response_ == null ? com.kianiranian.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+          return response_ == null ? ProtoResponse.Response.getDefaultInstance() : response_;
         } else {
           return responseBuilder_.getMessage();
         }
@@ -2016,7 +1951,7 @@ public final class ProtoUserProfileUpdate {
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public Builder setResponse(com.kianiranian.proto.ProtoResponse.Response value) {
+      public Builder setResponse(ProtoResponse.Response value) {
         if (responseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2033,7 +1968,7 @@ public final class ProtoUserProfileUpdate {
        * <code>optional .proto.Response response = 1;</code>
        */
       public Builder setResponse(
-          com.kianiranian.proto.ProtoResponse.Response.Builder builderForValue) {
+          ProtoResponse.Response.Builder builderForValue) {
         if (responseBuilder_ == null) {
           response_ = builderForValue.build();
           onChanged();
@@ -2046,11 +1981,11 @@ public final class ProtoUserProfileUpdate {
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public Builder mergeResponse(com.kianiranian.proto.ProtoResponse.Response value) {
+      public Builder mergeResponse(ProtoResponse.Response value) {
         if (responseBuilder_ == null) {
           if (response_ != null) {
             response_ =
-              com.kianiranian.proto.ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
+              ProtoResponse.Response.newBuilder(response_).mergeFrom(value).buildPartial();
           } else {
             response_ = value;
           }
@@ -2078,7 +2013,7 @@ public final class ProtoUserProfileUpdate {
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public com.kianiranian.proto.ProtoResponse.Response.Builder getResponseBuilder() {
+      public ProtoResponse.Response.Builder getResponseBuilder() {
         
         onChanged();
         return getResponseFieldBuilder().getBuilder();
@@ -2086,23 +2021,23 @@ public final class ProtoUserProfileUpdate {
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
-      public com.kianiranian.proto.ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
+      public ProtoResponse.ResponseOrBuilder getResponseOrBuilder() {
         if (responseBuilder_ != null) {
           return responseBuilder_.getMessageOrBuilder();
         } else {
           return response_ == null ?
-              com.kianiranian.proto.ProtoResponse.Response.getDefaultInstance() : response_;
+              ProtoResponse.Response.getDefaultInstance() : response_;
         }
       }
       /**
        * <code>optional .proto.Response response = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.kianiranian.proto.ProtoResponse.Response, com.kianiranian.proto.ProtoResponse.Response.Builder, com.kianiranian.proto.ProtoResponse.ResponseOrBuilder> 
+          ProtoResponse.Response, ProtoResponse.Response.Builder, ProtoResponse.ResponseOrBuilder>
           getResponseFieldBuilder() {
         if (responseBuilder_ == null) {
           responseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.kianiranian.proto.ProtoResponse.Response, com.kianiranian.proto.ProtoResponse.Response.Builder, com.kianiranian.proto.ProtoResponse.ResponseOrBuilder>(
+              ProtoResponse.Response, ProtoResponse.Response.Builder, ProtoResponse.ResponseOrBuilder>(
                   getResponse(),
                   getParentForChildren(),
                   isClean());
@@ -2111,20 +2046,20 @@ public final class ProtoUserProfileUpdate {
         return responseBuilder_;
       }
 
-      private java.lang.Object bio_ = "";
+      private Object bio_ = "";
       /**
        * <code>optional string bio = 2;</code>
        */
-      public java.lang.String getBio() {
-        java.lang.Object ref = bio_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getBio() {
+        Object ref = bio_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           bio_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -2132,11 +2067,11 @@ public final class ProtoUserProfileUpdate {
        */
       public com.google.protobuf.ByteString
           getBioBytes() {
-        java.lang.Object ref = bio_;
+        Object ref = bio_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           bio_ = b;
           return b;
         } else {
@@ -2147,7 +2082,7 @@ public final class ProtoUserProfileUpdate {
        * <code>optional string bio = 2;</code>
        */
       public Builder setBio(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2180,20 +2115,20 @@ public final class ProtoUserProfileUpdate {
         return this;
       }
 
-      private java.lang.Object email_ = "";
+      private Object email_ = "";
       /**
        * <code>optional string email = 3;</code>
        */
-      public java.lang.String getEmail() {
-        java.lang.Object ref = email_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getEmail() {
+        Object ref = email_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           email_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -2201,11 +2136,11 @@ public final class ProtoUserProfileUpdate {
        */
       public com.google.protobuf.ByteString
           getEmailBytes() {
-        java.lang.Object ref = email_;
+        Object ref = email_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           email_ = b;
           return b;
         } else {
@@ -2216,7 +2151,7 @@ public final class ProtoUserProfileUpdate {
        * <code>optional string email = 3;</code>
        */
       public Builder setEmail(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2249,89 +2184,64 @@ public final class ProtoUserProfileUpdate {
         return this;
       }
 
-      private java.lang.Object gender_ = "";
+      private int gender_ = 0;
       /**
-       * <code>optional string gender = 4;</code>
+       * <code>optional .proto.Gender gender = 4;</code>
        */
-      public java.lang.String getGender() {
-        java.lang.Object ref = gender_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          gender_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public int getGenderValue() {
+        return gender_;
       }
       /**
-       * <code>optional string gender = 4;</code>
+       * <code>optional .proto.Gender gender = 4;</code>
        */
-      public com.google.protobuf.ByteString
-          getGenderBytes() {
-        java.lang.Object ref = gender_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          gender_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string gender = 4;</code>
-       */
-      public Builder setGender(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setGenderValue(int value) {
         gender_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string gender = 4;</code>
+       * <code>optional .proto.Gender gender = 4;</code>
+       */
+      public com.kianiranian.proto.ProtoGlobal.Gender getGender() {
+        com.kianiranian.proto.ProtoGlobal.Gender result = com.kianiranian.proto.ProtoGlobal.Gender.valueOf(gender_);
+        return result == null ? com.kianiranian.proto.ProtoGlobal.Gender.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .proto.Gender gender = 4;</code>
+       */
+      public Builder setGender(com.kianiranian.proto.ProtoGlobal.Gender value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        gender_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.Gender gender = 4;</code>
        */
       public Builder clearGender() {
         
-        gender_ = getDefaultInstance().getGender();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string gender = 4;</code>
-       */
-      public Builder setGenderBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        gender_ = value;
+        gender_ = 0;
         onChanged();
         return this;
       }
 
-      private java.lang.Object nickname_ = "";
+      private Object nickname_ = "";
       /**
        * <code>optional string nickname = 5;</code>
        */
-      public java.lang.String getNickname() {
-        java.lang.Object ref = nickname_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getNickname() {
+        Object ref = nickname_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           nickname_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -2339,11 +2249,11 @@ public final class ProtoUserProfileUpdate {
        */
       public com.google.protobuf.ByteString
           getNicknameBytes() {
-        java.lang.Object ref = nickname_;
+        Object ref = nickname_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           nickname_ = b;
           return b;
         } else {
@@ -2354,7 +2264,7 @@ public final class ProtoUserProfileUpdate {
        * <code>optional string nickname = 5;</code>
        */
       public Builder setNickname(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2387,20 +2297,20 @@ public final class ProtoUserProfileUpdate {
         return this;
       }
 
-      private java.lang.Object username_ = "";
+      private Object username_ = "";
       /**
        * <code>optional string username = 6;</code>
        */
-      public java.lang.String getUsername() {
-        java.lang.Object ref = username_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getUsername() {
+        Object ref = username_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           username_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -2408,11 +2318,11 @@ public final class ProtoUserProfileUpdate {
        */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
-        java.lang.Object ref = username_;
+        Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           username_ = b;
           return b;
         } else {
@@ -2423,7 +2333,7 @@ public final class ProtoUserProfileUpdate {
        * <code>optional string username = 6;</code>
        */
       public Builder setUsername(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2470,12 +2380,12 @@ public final class ProtoUserProfileUpdate {
     }
 
     // @@protoc_insertion_point(class_scope:proto.UserProfileUpdateResponse)
-    private static final com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse DEFAULT_INSTANCE;
+    private static final UserProfileUpdateResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse();
+      DEFAULT_INSTANCE = new UserProfileUpdateResponse();
     }
 
-    public static com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse getDefaultInstance() {
+    public static UserProfileUpdateResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2493,12 +2403,12 @@ public final class ProtoUserProfileUpdate {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<UserProfileUpdateResponse> getParserForType() {
       return PARSER;
     }
 
-    public com.kianiranian.proto.ProtoUserProfileUpdate.UserProfileUpdateResponse getDefaultInstanceForType() {
+    public UserProfileUpdateResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2522,17 +2432,19 @@ public final class ProtoUserProfileUpdate {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\027UserProfileUpdate.proto\022\005proto\032\rReques" +
-      "t.proto\032\016Response.proto\"\204\001\n\021UserProfileU" +
-      "pdate\022\037\n\007request\030\001 \001(\0132\016.proto.Request\022\013" +
-      "\n\003bio\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\016\n\006gender\030\004 \001" +
-      "(\t\022\020\n\010nickname\030\005 \001(\t\022\020\n\010username\030\006 \001(\t\"\216" +
-      "\001\n\031UserProfileUpdateResponse\022!\n\010response" +
-      "\030\001 \001(\0132\017.proto.Response\022\013\n\003bio\030\002 \001(\t\022\r\n\005" +
-      "email\030\003 \001(\t\022\016\n\006gender\030\004 \001(\t\022\020\n\010nickname\030" +
-      "\005 \001(\t\022\020\n\010username\030\006 \001(\tB/\n\025com.kianirani" +
-      "an.protoB\026ProtoUserProfileUpdateb\006proto3"
+      "t.proto\032\016Response.proto\032\014Global.proto\"\223\001" +
+      "\n\021UserProfileUpdate\022\037\n\007request\030\001 \001(\0132\016.p" +
+      "roto.Request\022\013\n\003bio\030\002 \001(\t\022\r\n\005email\030\003 \001(\t" +
+      "\022\035\n\006gender\030\004 \001(\0162\r.proto.Gender\022\020\n\010nickn" +
+      "ame\030\005 \001(\t\022\020\n\010username\030\006 \001(\t\"\235\001\n\031UserProf" +
+      "ileUpdateResponse\022!\n\010response\030\001 \001(\0132\017.pr" +
+      "oto.Response\022\013\n\003bio\030\002 \001(\t\022\r\n\005email\030\003 \001(\t" +
+      "\022\035\n\006gender\030\004 \001(\0162\r.proto.Gender\022\020\n\010nickn" +
+      "ame\030\005 \001(\t\022\020\n\010username\030\006 \001(\tB/\n\025com.kiani",
+      "ranian.protoB\026ProtoUserProfileUpdateb\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2545,23 +2457,25 @@ public final class ProtoUserProfileUpdate {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.kianiranian.proto.ProtoRequest.getDescriptor(),
-          com.kianiranian.proto.ProtoResponse.getDescriptor(),
+          ProtoRequest.getDescriptor(),
+          ProtoResponse.getDescriptor(),
+          com.kianiranian.proto.ProtoGlobal.getDescriptor(),
         }, assigner);
     internal_static_proto_UserProfileUpdate_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_UserProfileUpdate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserProfileUpdate_descriptor,
-        new java.lang.String[] { "Request", "Bio", "Email", "Gender", "Nickname", "Username", });
+        new String[] { "Request", "Bio", "Email", "Gender", "Nickname", "Username", });
     internal_static_proto_UserProfileUpdateResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_UserProfileUpdateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_UserProfileUpdateResponse_descriptor,
-        new java.lang.String[] { "Response", "Bio", "Email", "Gender", "Nickname", "Username", });
-    com.kianiranian.proto.ProtoRequest.getDescriptor();
-    com.kianiranian.proto.ProtoResponse.getDescriptor();
+        new String[] { "Response", "Bio", "Email", "Gender", "Nickname", "Username", });
+    ProtoRequest.getDescriptor();
+    ProtoResponse.getDescriptor();
+    com.kianiranian.proto.ProtoGlobal.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
